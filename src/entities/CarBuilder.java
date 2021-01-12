@@ -5,8 +5,17 @@ import java.time.LocalDate;
 import enums.CarColor;
 import enums.Transmission;
 
+/**
+ * This class is the carbuilder to create cars with the different
+ * characteristics.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public class CarBuilder {
 
+	private int carId;
 	private String brandName;
 	private String model;
 	private LocalDate dateOfRelease;
@@ -19,6 +28,12 @@ public class CarBuilder {
 	private double price;
 
 	public CarBuilder() {
+
+	}
+
+	public CarBuilder withCarId(int carId) {
+		this.carId = carId;
+		return this;
 
 	}
 
@@ -71,8 +86,8 @@ public class CarBuilder {
 
 
 	public CarBuilder withStatus(String status) {
-		 this.status = status;
-		 return this;
+		this.status = status;
+		return this;
 	}
 
 
@@ -121,8 +136,12 @@ public class CarBuilder {
 		return this.price;
 	}
 
+
+	public int getCarId() {
+		return this.carId;
+	}
+
 	public Car create() {
 		return new Car(this);
 	}
-
 }

@@ -262,3 +262,445 @@ Column "brandName" not found [42122-200]
 	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
 	at java.lang.Thread.run(Unknown Source)
+2021-01-10 15:21:37 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllCarsFromDb(DbDMLStatements.java:174)
+	at controller.Controller.loadCarsIntoTableView(Controller.java:65)
+	at controller.Controller.<init>(Controller.java:53)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 39 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 33 more
+2021-01-10 15:52:26 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllCarsFromDb(DbDMLStatements.java:174)
+	at controller.Controller.loadCarsIntoTableView(Controller.java:65)
+	at controller.Controller.<init>(Controller.java:53)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 39 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 33 more
+2021-01-10 15:56:36 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllCarsFromDb(DbDMLStatements.java:174)
+	at controller.Controller.loadCarsIntoTableView(Controller.java:65)
+	at controller.Controller.<init>(Controller.java:53)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 39 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 33 more
+2021-01-10 17:11:53 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllCarsFromDb(DbDMLStatements.java:174)
+	at controller.Controller.loadCarsIntoTableView(Controller.java:65)
+	at controller.Controller.<init>(Controller.java:53)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 39 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 33 more
+2021-01-10 17:12:11 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllCarsFromDb(DbDMLStatements.java:174)
+	at controller.Controller.loadCarsIntoTableView(Controller.java:65)
+	at controller.Controller.<init>(Controller.java:53)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 39 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 33 more
+2021-01-10 17:47:24 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllCarsFromDb(DbDMLStatements.java:174)
+	at controller.Controller.loadCarsIntoTableView(Controller.java:65)
+	at controller.Controller.<init>(Controller.java:53)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 39 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 33 more
+2021-01-10 17:59:18 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllCarsFromDb(DbDMLStatements.java:174)
+	at controller.Controller.loadCarsIntoTableView(Controller.java:65)
+	at controller.Controller.<init>(Controller.java:53)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 39 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 33 more
+2021-01-11 09:01:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "BRAND" nicht gefunden
+Table "BRAND" not found; SQL statement:
+SELECT * FROM Brand [42102-200]
+2021-01-11 09:01:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CAR" nicht gefunden
+Table "CAR" not found; SQL statement:
+SELECT * FROM Car JOIN Model ON Model.id=Car.modelid JOIN Brand ON Brand.id=Car.brandid [42102-200]
+2021-01-11 09:02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "BRAND" nicht gefunden
+Table "BRAND" not found; SQL statement:
+SELECT * FROM Brand [42102-200]
+2021-01-11 09:02:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CAR" nicht gefunden
+Table "CAR" not found; SQL statement:
+SELECT * FROM Car JOIN Model ON Model.id=Car.modelid JOIN Brand ON Brand.id=Car.brandid [42102-200]
+2021-01-11 10:04:52 database: flush
+org.h2.message.DbException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.DbConnectionUtils.createConnectionToDatabase(DbConnectionUtils.java:25)
+	at database.DbConnectionUtils.getDatabaseConnection(DbConnectionUtils.java:39)
+	at database.DbDMLStatements.getAllBrandsFromDb(DbDMLStatements.java:206)
+	at views.WizardView.updated(WizardView.java:97)
+	at views.WizardView.<init>(WizardView.java:49)
+	at views.MainView.<init>(MainView.java:14)
+	at controller.Controller.<init>(Controller.java:40)
+	at application.Main.start(Main.java:22)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$8(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$7(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$5(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$6(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:185)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 41 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/VWTXQLR/eclipse/MoeHeyCar/res/MoeDanHeyCar.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 35 more
+2021-01-12 10:50:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "BRAND" nicht gefunden
+Table "BRAND" not found; SQL statement:
+SELECT * FROM Brand [42102-200]
+2021-01-12 10:50:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CAR" nicht gefunden
+Table "CAR" not found; SQL statement:
+SELECT * FROM Car JOIN Model ON Model.id=Car.modelid JOIN Brand ON Brand.id=Car.brandid [42102-200]

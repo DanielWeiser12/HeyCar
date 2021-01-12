@@ -13,8 +13,18 @@ import entities.CarBuilder;
 import enums.CarColor;
 import enums.Transmission;
 
+/**
+ * This class inserts the cars into the database and loads them.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public class DbDMLStatements {
 
+	/*
+	 * This method gets the id of the brand from the brand-table.
+	 */
 
 	private static Integer getBrandIdFromBrand(String brand) {
 
@@ -36,6 +46,10 @@ public class DbDMLStatements {
 		return brandId;
 	}
 
+	/*
+	 * This method gets the id of the model from the model-table.
+	 */
+
 	private static Integer getModelIdFromModel(String model) {
 
 		String query = "SELECT id FROM Model WHERE model = ?;";
@@ -56,6 +70,10 @@ public class DbDMLStatements {
 		return modelId;
 	}
 
+	/*
+	 * This method adds a brand into the brand-table.
+	 */
+
 	private static void insertBrandIntoDb(String brand) {
 		String insertStatement = "INSERT INTO Brand (brand) VALUES (?);";
 
@@ -69,6 +87,10 @@ public class DbDMLStatements {
 		}
 
 	}
+
+	/*
+	 * This method adds a model into the model-table.
+	 */
 
 	private static void insertModelIntoDb(String model, String brand) {
 		String insertStatement = "INSERT INTO Model (model, brandid) VALUES (?, ?);";
@@ -89,6 +111,11 @@ public class DbDMLStatements {
 		}
 
 	}
+
+	/*
+	 * This method adds a car into the car-table. If the brand or model are not in
+	 * the table yet, it will be added.
+	 */
 
 	public static void insertCarIntoDb(Car car) {
 
@@ -131,6 +158,10 @@ public class DbDMLStatements {
 
 	}
 
+	/*
+	 * This method gets all cars from the database.
+	 */
+
 	public static List<Car> getAllCarsFromDb() {
 
 		String query = "SELECT * FROM Car JOIN Model ON Model.id=Car.modelid JOIN Brand ON Brand.id=Car.brandid";
@@ -143,7 +174,7 @@ public class DbDMLStatements {
 			statement = DbConnectionUtils.getDatabaseConnection().createStatement();
 			ResultSet allCars = statement.executeQuery(query);
 			while (allCars.next()) {
-				carList.add(new CarBuilder().withBrandName(allCars.getString("brand"))
+				carList.add(new CarBuilder().withCarId(allCars.getInt("id")).withBrandName(allCars.getString("brand"))
 						.withModel(allCars.getString("model"))
 						.withDateOfRelease(allCars.getDate("dateOfRelease").toLocalDate())
 						.withMileage(allCars.getInt("mileage"))
@@ -163,6 +194,31 @@ public class DbDMLStatements {
 
 	}
 
+	public static List<String> getAllBrandsFromDb() {
 
+		String query = "SELECT * FROM Brand";
+
+		List<String> brandList = new ArrayList();
+
+		Statement statement;
+
+		try {
+			statement = DbConnectionUtils.getDatabaseConnection().createStatement();
+			ResultSet allBrands = statement.executeQuery(query);
+
+			while(allBrands.next()) {
+
+				brandList.add(allBrands.getString("brand"));
+
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+
+		return brandList;
+
+	}
 
 }

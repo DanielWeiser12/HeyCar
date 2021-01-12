@@ -5,8 +5,16 @@ import java.time.LocalDate;
 import enums.CarColor;
 import enums.Transmission;
 
+/**
+ * This class creates an object "car" by using the carbuilder.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public class Car {
 
+	private int carId;
 	private String brandName;
 	private String model;
 	private LocalDate dateOfRelease;
@@ -21,6 +29,7 @@ public class Car {
 
 	public Car(CarBuilder builder) {
 
+		this.carId = builder.getCarId();
 		this.brandName = builder.getBrandName();
 		this.model = builder.getModel();
 		this.dateOfRelease = builder.getDateOfRelease();
@@ -82,6 +91,11 @@ public class Car {
 
 	public double getPrice() {
 		return this.price;
+	}
+
+
+	public int getCarId() {
+		return this.carId;
 	}
 
 }

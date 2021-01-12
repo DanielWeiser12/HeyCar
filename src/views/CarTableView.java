@@ -12,15 +12,27 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 
+/**
+ * The view of the tableview which shows the cars.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public class CarTableView extends GridPane {
 
-	TableView carTableView = new TableView();
+	TableView<Car> carTableView = new TableView<Car>();
+	CarInformationView carInformationView;
 
 	public CarTableView() {
 
 		this.updated();
 
 	}
+
+	/*
+	 * This method creates the tableview.
+	 */
 
 	private void updated() {
 
@@ -32,6 +44,7 @@ public class CarTableView extends GridPane {
 		this.setVgap(15);
 
 
+		TableColumn<Car, Integer> carIdColumn = new TableColumn<>("Car ID");
 		TableColumn<Car, String> brandNameColumn = new TableColumn<>("Brandname");
 		TableColumn<Car, String> modelColumn = new TableColumn<>("Model");
 		TableColumn<Car, LocalDate> dateOfReleaseColumn = new TableColumn<>("Date of Release");
@@ -43,6 +56,7 @@ public class CarTableView extends GridPane {
 		TableColumn<Car, String> statusColumn = new TableColumn<>("Status");
 		TableColumn<Car, Double> priceColumn = new TableColumn<>("Price");
 
+		carIdColumn.setCellValueFactory(new PropertyValueFactory<>("carId"));
 		brandNameColumn.setCellValueFactory(new PropertyValueFactory<>("brandName"));
 		modelColumn.setCellValueFactory(new PropertyValueFactory<>("model"));
 		dateOfReleaseColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfRelease"));
@@ -54,6 +68,7 @@ public class CarTableView extends GridPane {
 		statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 		priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+		this.carTableView.getColumns().add(carIdColumn);
 		this.carTableView.getColumns().add(brandNameColumn);
 		this.carTableView.getColumns().add(modelColumn);
 		this.carTableView.getColumns().add(dateOfReleaseColumn);
@@ -65,12 +80,19 @@ public class CarTableView extends GridPane {
 		this.carTableView.getColumns().add(statusColumn);
 		this.carTableView.getColumns().add(priceColumn);
 
+
 		this.add(this.carTableView, 0, 1);
+
 
 	}
 
-	public TableView getCarTableView() {
+
+	public TableView<Car> getCarTableView() {
 		return this.carTableView;
+	}
+
+	public void setCarTableView(TableView<Car> carTableView) {
+		this.carTableView = carTableView;
 	}
 
 }

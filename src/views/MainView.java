@@ -2,6 +2,13 @@ package views;
 
 import javafx.scene.layout.HBox;
 
+/**
+ * In the mainview are all other views added.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public class MainView extends HBox {
 
 	WizardView wizardView = new WizardView();

@@ -19,12 +19,14 @@ public class Main extends Application {
 		DbDDLStatements.createModelTable();
 		DbDDLStatements.createHeyCarDb();
 
-//		try {
-//			DbConnectionUtils.getDatabaseConnection().close();
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		//		DbDDLStatements.dropAllTables();
+
+		//		try {
+		//			DbConnectionUtils.getDatabaseConnection().close();
+		//		} catch (SQLException e) {
+		//			// TODO Auto-generated catch block
+		//			e.printStackTrace();
+		//		}
 
 
 

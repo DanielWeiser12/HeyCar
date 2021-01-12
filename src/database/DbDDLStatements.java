@@ -1,9 +1,40 @@
 package database;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * All necessary tables are created in this class.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public class DbDDLStatements {
+
+	public static void dropAllTables() {
+		StringBuilder dropSb = new StringBuilder("DROP TABLE ");
+		String query = "SELECT Table_Name FROM Information_Schema.Tables WHERE Table_Schema='PUBLIC';";
+		try {
+			Statement queryStatement = DbConnectionUtils.getDatabaseConnection().createStatement();
+			ResultSet allTableNames = queryStatement.executeQuery(query);
+			while (allTableNames.next()) {
+				dropSb.append(allTableNames.getString("Table_Name") + ", ");
+			}
+
+			if (dropSb.length() <= 11) {
+				return;
+			}
+
+			Statement dropStatement = DbConnectionUtils.getDatabaseConnection().createStatement();
+
+			String dropString = dropSb.replace(dropSb.length() - 2, dropSb.length(), ";").toString();
+			dropStatement.execute(dropString);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void createHeyCarDb() {
 

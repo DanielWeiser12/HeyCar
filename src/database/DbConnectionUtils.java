@@ -4,6 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * This class creates the connection to the database.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public final class DbConnectionUtils {
 
 	private static Connection connection;

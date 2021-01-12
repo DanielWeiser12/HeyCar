@@ -2,6 +2,13 @@ package control;
 
 import javafx.scene.control.TextField;
 
+/**
+ * This class defines that in this specific textfield only numbers can be used.
+ *
+ * @author Mohammed Al-Ashtal, Daniel Weiser
+ *
+ */
+
 public class NumOnlyTf extends TextField {
 
 	public NumOnlyTf() {
